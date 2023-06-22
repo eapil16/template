@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/jquery.fancybox.css">
+    <link rel="stylesheet" href="assets/css/jquery.formstyler.css">
+    <link rel="stylesheet" href="assets/css/jquery.formstyler.theme.css">
+    <link rel="stylesheet" href="assets/css/nouislider.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>food</title>
+  </head>
+  <body>
+    <div class="wrapper"> 
+      <header class="header">
+        <div class="container"> 
+          <div class="header-top"> 
+            <div class="header-top__left">
+              <div class="location" data-bs-toggle="modal" data-bs-target="#cityModal">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="12.998" viewBox="0 0 13 12.998">
+                  <path id="location_icon" data-name="location icon" d="M8.385,12.036c-.458,1.262-1.747,1.308-2.049,0l-1-4.318-4.32-1c-1.308-.3-1.262-1.663,0-2.122L12.175.034a.674.674,0,0,1,.847.847Z" transform="translate(-0.056 -0.001)" fill="#d5d5d5"></path>
+                </svg>
+                <p>Москва</p>
+              </div>
+              <p class="address">Песчаный пер., дом 7</p>
+            </div>
+            <div class="header-top__right">
+              <div class="header-top__right__item">
+                <div class="header-top__phones"> 
+                  <p class="phones-button">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13">
+<path id="phone_icon" data-name="phone icon" d="M111.285,28.827l1.623,2.859a.707.707,0,0,1-.225.866l-1.443.866a9.082,9.082,0,0,0,1.849,2.729,8.827,8.827,0,0,0,2.705,1.95l.992-1.3a.661.661,0,0,1,.9-.173l2.886,1.776a.509.509,0,0,1,.135.78l-1.4,1.906c-1.8,1.343-5.32-.607-8.025-3.379-2.615-2.773-4.418-6.238-2.886-7.885l2.029-1.213a.618.618,0,0,1,.857.217Z" transform="translate(-107.836 -28.522)" fill="#d5d5d5" fill-rule="evenodd"/>
+</svg><a href="tel:89008007060">+7 (900) 800 70 60</a>
+                  </p>
+                  <div class="header-top__phones_block"> 
+                    <ul class="header-top__phones_list"> 
+                      <li class="header-top__phones_list_item"> <a class="header-top__phones_list_link" href="tel:88009005010">+7 (800) 900 50 10</a></li>
+                      <li class="header-top__phones_list_item"> <a class="header-top__phones_list_link" href="tel:89007006020">+7 (900) 700 60 20</a></li>
+                      <li class="header-top__phones_list_item"> <a class="header-top__phones_list_link" href="tel:88006008050">+7 (800) 600 80 50</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="header-top__right__item"><a class="mail" href="mailto:hello@sitename.ru">hello@sitename.ru </a></div>
+              <div class="header-top__right__item">
+                <div class="header-top__schedule">
+                  <p class="schedule-button schedule-button">Время работы</p>
+                  <div class="header-top__schedule_block"> 
+                    <p>Прием заказов с 10<sup>00</sup> - 18<sup>00</sup></p>
+                    <p>Доставка 24 часа в сутки</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="header-bottom">					
+            <div class="header-bottom__item">
+              <div class="header-bottom__logo"><a href="/"><img src="assets/images/logo.svg" alt=""></a></div>
+            </div>
+            <div class="header-bottom__item">
+              <div class="header-bottom__menu"> 
+                <div class="header__part d-hid header__toggle"> 
+                  <div class="menu-toggle-cont"><span class="menu-toggle"></span></div>
+                </div>
+                <div class="fixed-menu" id="nav"> 
+                  <div class="mobile-block-hidden"> 
+                    <div class="mobile-block_search"> 
+                      <form> 
+                        <form>
+                          <input type="text" placeholder="Найти...">
+                          <button class="btn button" type="search"> 
+                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19">
+                              <path id="Path_3913" data-name="Path 3913" d="M190.133,112a8.074,8.074,0,1,0,4.749,14.607l4.02,4.022a1.267,1.267,0,0,0,1.792-1.792l-4.02-4.022A8.068,8.068,0,0,0,190.133,112Zm0,13.616a5.547,5.547,0,1,1,3.915-1.625A5.539,5.539,0,0,1,190.133,125.612Z" transform="translate(-182.064 -111.996)" fill="#104744"> </path>
+                            </svg>
+                          </button>
+                        </form>
+                      </form>
+                    </div>
+                    <div class="location" data-bs-toggle="modal" data-bs-target="#cityModal">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="13" height="12.998" viewBox="0 0 13 12.998">
+                        <path id="location_icon" data-name="location icon" d="M8.385,12.036c-.458,1.262-1.747,1.308-2.049,0l-1-4.318-4.32-1c-1.308-.3-1.262-1.663,0-2.122L12.175.034a.674.674,0,0,1,.847.847Z" transform="translate(-0.056 -0.001)" fill="#d5d5d5"></path>
+                      </svg>
+                      <p>Петропавловск-Камчатский</p>
+                    </div>
+                  </div>
+                  <ul class="main-menu"> 
+                    <li class="main-menu__item"> <a class="main-menu__link" id="catalog" href="#">Меню</a></li>
+                    <ul class="submenu"> 
+                      <ul class="submenu-menu"> 
+                        <li class="submenu-block"> <a class="submenu-block__item" href="#"><span class="image"> <img src="assets/images/menu-1.png" alt=""></span><span class="text">Порционные блюда</span></a></li>
+                        <li class="submenu-block"> <a class="submenu-block__item selected" href="#"><span class="image"> <img src="assets/images/menu-2.png" alt=""></span><span class="text">Сэндвичи</span></a></li>
+                        <li class="submenu-block"> <a class="submenu-block__item" href="#"><span class="image"> <img src="assets/images/menu-3.png" alt=""></span><span class="text">Блюда в лаваше</span></a></li>
+                        <li class="submenu-block"> <a class="submenu-block__item" href="#"><span class="image"> <img src="assets/images/menu-4.png" alt=""></span><span class="text">Картофель</span></a></li>
+                        <li class="submenu-block"> <a class="submenu-block__item" href="#"><span class="image"> <img src="assets/images/menu-5.png" alt=""></span><span class="text">Аппетайзеры</span></a></li>
+                        <li class="submenu-block"> <a class="submenu-block__item" href="#"><span class="image"> <img src="assets/images/menu-6.png" alt=""></span><span class="text">Салаты</span></a></li>
+                        <li class="submenu-block"> <a class="submenu-block__item" href="#"><span class="image"> <img src="assets/images/menu-7.png" alt=""></span><span class="text">Напитки</span></a></li>
+                        <li class="submenu-block"> <a class="submenu-block__item" href="#"><span class="image"> <img src="assets/images/menu-8.png" alt=""></span><span class="text">Десерты</span></a></li>
+                        <li class="submenu-block"> <a class="submenu-block__item" href="#"><span class="image"> <img src="assets/images/menu-9.png" alt=""></span><span class="text">Пицца								</span></a></li>
+                      </ul>
+                    </ul>
+                    <li class="main-menu__item"> <a class="main-menu__link" href="#">О компании</a></li>
+                    <li class="main-menu__item"> <a class="main-menu__link selected" href="#">Доставка и оплата								</a></li>
+                    <div class="mobile-block">
+                      <li class="main-menu__item"> <a class="main-menu__link" href="#">Отзывы</a></li>
+                      <li class="main-menu__item"> <a class="main-menu__link" href="#">Блог</a></li>
+                      <li class="main-menu__item"> <a class="main-menu__link" href="#">Контакты</a></li>
+                    </div>
+                    <div class="mobile-menu__button"> <img src="assets/images/button.svg" alt=""></div>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="header-bottom__item">
+              <ul class="header-bottom__action">
+                <li> <a id="search" href="#"> 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19">
+                      <path id="Path_3913" data-name="Path 3913" d="M190.133,112a8.074,8.074,0,1,0,4.749,14.607l4.02,4.022a1.267,1.267,0,0,0,1.792-1.792l-4.02-4.022A8.068,8.068,0,0,0,190.133,112Zm0,13.616a5.547,5.547,0,1,1,3.915-1.625A5.539,5.539,0,0,1,190.133,125.612Z" transform="translate(-182.064 -111.996)" fill="#d5d5d5"> </path>
+                    </svg></a></li>
+                <li> <a href="#"> 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="19" height="17" viewBox="0 0 19 17">
+                      <path id="add_to_favorite" data-name="add to favorite" d="M106.117,45.631a4.909,4.909,0,0,0-3.475-3.115c-2.731-.629-4.911,1.194-5.652,1.924-.739-.73-2.917-2.556-5.652-1.924a4.908,4.908,0,0,0-3.475,3.115c-.788,2.2-.712,5.687,4.124,9.758l4.782,3.918a.346.346,0,0,0,.221.079.351.351,0,0,0,.222-.079L102,55.387c4.833-4.068,4.909-7.551,4.121-9.755Z" transform="translate(-87.49 -42.386)" fill="#d5d5d5"></path>
+                    </svg></a></li>
+                <li> <a class="basket" id="basket" href="#"> 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19">
+                      <path id="basket" d="M4.275-1363.308a2.058,2.058,0,0,1-2.058-2.058L0-1373.757a1.267,1.267,0,0,1,1.267-1.267H17.733A1.267,1.267,0,0,1,19-1373.757l-2.217,8.391a2.058,2.058,0,0,1-2.058,2.058ZM8.8-1376.857a1.029,1.029,0,0,1,0-1.455l3.695-3.695a1.029,1.029,0,0,1,1.455,0,1.029,1.029,0,0,1,0,1.456l-3.695,3.694a1.025,1.025,0,0,1-.728.3A1.025,1.025,0,0,1,8.8-1376.857Z" transform="translate(0 1382.308)" fill="#d5d5d5"></path>
+                    </svg></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="header-search"> 
+        <div class="container">
+          <p>Поиск по сайту</p>
+          <div class="header-search__block">
+            <form>
+              <input type="text" placeholder="Найти...">
+              <button class="btn button" type="search">Найти</button>
+            </form>
+            <button class="btn-close" id="close-search" type="button">
+              <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10.998" viewBox="0 0 11 10.998">
+                <path id="Path_28" data-name="Path 28" d="M-6954.5-1378.5l-4.5,4.5-1-1,4.5-4.5-4.5-4.5,1-1,4.5,4.5,4.5-4.5,1,1-4.5,4.5,4.5,4.5-1,1Z" transform="translate(6960 1385)" fill="#e97907"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="basket-block">
+        <div class="basket-block_close">
+           <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10.998" viewBox="0 0 11 10.998">
+<path id="Path_28" data-name="Path 28" d="M-6954.5-1378.5l-4.5,4.5-1-1,4.5-4.5-4.5-4.5,1-1,4.5,4.5,4.5-4.5,1,1-4.5,4.5,4.5,4.5-1,1Z" transform="translate(6960 1385)" fill="#104744"></path>
+</svg>
+        </div>
+        <h2>Корзина</h2>
+        <div class="cart-total">
+          <div class="cart-total__item"> 
+            <div class="cart-total__item_content">
+              <div class="cart-total__item_content-image"> <a href="#"> <img src="assets/images/basket.png" alt=""></a></div>
+              <div class="cart-total__item_content-text"><a class="link" href="#">Фирменный бургер</a>
+                <div class="input-group spinner">
+                  <button class="btn increase" type="button"> 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="1.999" viewBox="0 0 10 1.999">
+                      <path id="Path_3925" data-name="Path 3925" d="M6705-1884v-2h10v2Z" transform="translate(-6705 1886)" fill="#25273d"></path>
+                    </svg>
+                  </button>
+                  <input class="spinner-input" type="text" value="1" readonly="readonly">
+                  <button class="btn decrease" type="button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10">
+                      <path id="Path_3925" data-name="Path 3925" d="M6709-1880v-4h-4v-2h4v-4h2v4h4v2h-4v4Z" transform="translate(-6705 1890)" fill="#25273d"></path>
+                    </svg>
+                  </button>
+                </div>
+                <p class="price"> <span class="pr">3 200 р.</span></p>
+              </div>
+            </div>
+            <div class="cart-total__item_act"><a class="delete" href="#">Удалить</a></div>
+          </div>
+          <div class="cart-total__text">
+            <p> <span>Товаров на сумму</span><strong>3 200 р.</strong></p>
+            <p> <span>Стоимость доставки</span><strong>250 р.</strong></p>
+            <p class="total"> <span>Итого</span><strong>3 450 р.</strong></p><a class="order" href="#">Оформить заказ</a>
+          </div>
+        </div>
+        <div class="basket-block__slider"> 
+          <p class="caption">Вместе с этим берут</p>
+          <div class="slider-basket swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="slider-categories__slide"><span class="slider-categories__slide_image"><a href="#"><img src="assets/images/category-6.png" alt=""></a></span><span class="slider-categories__slide_text"><span class="text">   <span class="text-value">                                <a class="name" href="#">Хот-дог "Спайси BBQ"</a>
+                        <p class="value">190 гр.</p></span></span><span class="actions"><span class="price">3 200 руб.   </span>
+                      <div class="actions-to-basket">                           <a class="button in-button" href="#">+</a>
+                        <div class="input-group spinner">
+                          <button class="btn increase" type="button"> 
+                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="1.999" viewBox="0 0 10 1.999">
+                              <path id="Path_3925" data-name="Path 3925" d="M6705-1884v-2h10v2Z" transform="translate(-6705 1886)" fill="#25273d"></path>
+                            </svg>
+                          </button>
+                          <input class="spinner-input" type="text" value="1" readonly="readonly">
+                          <button class="btn decrease" type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10">
+                              <path id="Path_3925" data-name="Path 3925" d="M6709-1880v-4h-4v-2h4v-4h2v4h4v2h-4v4Z" transform="translate(-6705 1890)" fill="#25273d"></path>
+                            </svg>
+                          </button>
+                        </div>
+                      </div></span></span></div>
+              </div>
+              <div class="swiper-slide">
+                <div class="slider-categories__slide"><span class="slider-categories__slide_image"><a href="#"><img src="assets/images/category-5.png" alt=""></a></span><span class="slider-categories__slide_text"><span class="text">   <span class="text-value">                                <a class="name" href="#">Хот-дог "Спайси BBQ"</a>
+                        <p class="value">190 гр.</p></span></span><span class="actions"><span class="price">3 200 руб.   </span>
+                      <div class="actions-to-basket">                           <a class="button in-button" href="#">+</a>
+                        <div class="input-group spinner">
+                          <button class="btn increase" type="button"> 
+                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="1.999" viewBox="0 0 10 1.999">
+                              <path id="Path_3925" data-name="Path 3925" d="M6705-1884v-2h10v2Z" transform="translate(-6705 1886)" fill="#25273d"></path>
+                            </svg>
+                          </button>
+                          <input class="spinner-input" type="text" value="1" readonly="readonly">
+                          <button class="btn decrease" type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10">
+                              <path id="Path_3925" data-name="Path 3925" d="M6709-1880v-4h-4v-2h4v-4h2v4h4v2h-4v4Z" transform="translate(-6705 1890)" fill="#25273d"></path>
+                            </svg>
+                          </button>
+                        </div>
+                      </div></span></span></div>
+              </div>
+              <div class="swiper-slide">
+                <div class="slider-categories__slide"><span class="slider-categories__slide_image"><a href="#"><img src="assets/images/category-6.png" alt=""></a></span><span class="slider-categories__slide_text"><span class="text">   <span class="text-value">                                <a class="name" href="#">Хот-дог "Спайси BBQ"</a>
+                        <p class="value">190 гр.</p></span></span><span class="actions"><span class="price">3 200 руб.   </span>
+                      <div class="actions-to-basket">                           <a class="button in-button" href="#">+</a>
+                        <div class="input-group spinner">
+                          <button class="btn increase" type="button"> 
+                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="1.999" viewBox="0 0 10 1.999">
+                              <path id="Path_3925" data-name="Path 3925" d="M6705-1884v-2h10v2Z" transform="translate(-6705 1886)" fill="#25273d"></path>
+                            </svg>
+                          </button>
+                          <input class="spinner-input" type="text" value="1" readonly="readonly">
+                          <button class="btn decrease" type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10">
+                              <path id="Path_3925" data-name="Path 3925" d="M6709-1880v-4h-4v-2h4v-4h2v4h4v2h-4v4Z" transform="translate(-6705 1890)" fill="#25273d"></path>
+                            </svg>
+                          </button>
+                        </div>
+                      </div></span></span></div>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+          <div class="swiper-prev basket-prev">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="7" viewBox="0 0 15 7">
+              <path id="Path_26" data-name="Path 26" d="M4.861-1378.927l-2.064-1.98H15.269v-1.186H2.659l2.156-2.068L3.941-1385l-2.705,2.6-.967.926.875.838L3.9-1378Z" transform="translate(-0.269 1385)" fill="#104744"></path>
+            </svg>
+          </div>
+          <div class="swiper-next basket-next">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="7" viewBox="0 0 15 7">
+              <path id="Path_17" data-name="Path 17" d="M10.677-1378.927l2.064-1.98H.269v-1.186h12.61l-2.156-2.068L11.6-1385l2.705,2.6.967.926-.875.838L11.643-1378Z" transform="translate(-0.269 1385)" fill="#fff"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <main class="main-section">
+        <div class="inside-block">
+          <div class="container">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Главная</a></li>
+                <li class="breadcrumb-item"><a href="#">Каталог</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Букеты</li>
+              </ol>
+            </nav>
+            <div class="chekbox-text">
+              <p> 
+                <input type="checkbox" id="chekbox-1" checked="checked">
+                <label for="chekbox-1">Порционные блюда</label>
+              </p>
+              <p> 
+                <input type="checkbox" id="chekbox-2">
+                <label for="chekbox-2">Сэндвичи</label>
+              </p>
+              <p> 
+                <input type="checkbox" id="chekbox-3">
+                <label for="chekbox-3">Блюда в лаваше</label>
+              </p>
+              <p> 
+                <input type="checkbox" id="chekbox-4">
+                <label for="chekbox-4">Комбо наборы</label>
+              </p>
+              <p> 
+                <input type="checkbox" id="chekbox-5">
+                <label for="chekbox-5">Детские наборы</label>
+              </p>
+              <p> 
+                <input type="checkbox" id="chekbox-6">
+                <label for="chekbox-6">Картофель</label>
+              </p>
+              <p> 
+                <input type="checkbox" id="chekbox-7">
+                <label for="chekbox-7">Аппетайзеры</label>
+              </p>
+              <p> 
+                <input type="checkbox" id="chekbox-8">
+                <label for="chekbox-8">Салаты</label>
+              </p>
+              <p> 
+                <input type="checkbox" id="chekbox-9">
+                <label for="chekbox-9">Напитки</label>
+              </p>
+              <p> 
+                <input type="checkbox" id="chekbox-10">
+                <label for="chekbox-10">Десерты</label>
+              </p>
+              <p> 
+                <input type="checkbox" id="chekbox-11">
+                <label for="chekbox-11">Завтраки</label>
+              </p>
+              <p> 
+                <input type="checkbox" id="chekbox-12">
+                <label for="chekbox-12">Сувениры</label>
+              </p>
+              <p> 
+                <input type="checkbox" id="chekbox-13">
+                <label for="chekbox-13">Соусы</label>
+              </p>
+            </div>
+            <div class="inside-block__caption inside-block__caption-catalog">
+              <h1>Порционные блюда</h1>
+              <select> 
+                <option value="">По популярности</option>
+                <option value="">По возрастанию цены</option>
+                <option value="">По убыванию цены</option>
+                <option value="">По скидкам</option>
+              </select>
+            </div>
+            <div class="favorites"> 
+              <div class="row"> 
+                <div class="col-xl-3 col-12">
+                  <div class="sedebar"> 
+                    <div class="filter-button"> <span>Фильтры</span><svg xmlns="http://www.w3.org/2000/svg" width="21" height="17" viewBox="0 0 21 17">
+<path id="Path_3899" data-name="Path 3899" d="M7123.07-7155.251H7114v-1.5h9.07a.032.032,0,0,1,0,.007A4,4,0,0,1,7127-7160a3.936,3.936,0,0,1,3.929,3.25H7134v1.5h-3.071A4,4,0,0,1,7127-7152,4.005,4.005,0,0,1,7123.07-7155.251Zm1.432-.749a2.5,2.5,0,0,0,2.5,2.5,2.5,2.5,0,0,0,2.5-2.5,2.5,2.5,0,0,0-2.5-2.5A2.5,2.5,0,0,0,7124.5-7156Zm-1.434-.731h0Zm-6-6.52H7114v-1.5h3.071A3.94,3.94,0,0,1,7121-7168a4,4,0,0,1,3.932,3.265c0,.005,0,.007,0,.009a.188.188,0,0,1-.005-.023H7134v1.5h-9.07A4,4,0,0,1,7121-7160,4,4,0,0,1,7117.07-7163.251Zm1.429-.748a2.5,2.5,0,0,0,2.5,2.5,2.5,2.5,0,0,0,2.5-2.5,2.5,2.5,0,0,0-2.5-2.5A2.5,2.5,0,0,0,7118.5-7164Z" transform="translate(-7113.5 7168.5)" fill="#e97907" stroke="rgba(0,0,0,0)" stroke-width="1"/>
+</svg>
+                    </div>
+                    <div class="favorites-hidden">
+                      <div class="favorites-hidden__caption">
+                        <div class="favorites-hidden__close">	<img src="assets/images/close.svg" alt=""></div>
+                        <p>Фильтры</p>
+                      </div>
+                      <div class="price-block"> 
+                        <div class="filter-block__content">
+                          <p class="name">Цена (руб.)</p><div class="price-slider">
+<input type="text" id="input-with-keypress-0"> <span>- </span><input type="text" id="input-with-keypress-1">
+<div id="steps-slider"></div>	
+</div>	
+                        </div>
+                        <div class="filter-block__button"> <a class="button" href="#">Применить</a></div>
+                      </div>
+                      <div class="filter-block"> 
+                        <div class="filter-block__content">
+                          <p class="name">Основные ингредиенты</p>
+                          <input class="form-control" type="text" placeholder="Найти...">
+                          <div class="filter-scroll">
+                            <div class="chekbox">
+                              <p> 
+                                <input type="checkbox" id="filter-1" checked="checked">
+                                <label for="filter-1">Банан</label>
+                              </p>
+                              <p> 
+                                <input type="checkbox" id="filter-2">
+                                <label for="filter-2">Карамель</label>
+                              </p>
+                              <p> 
+                                <input type="checkbox" id="filter-3">
+                                <label for="filter-3">Молоко</label>
+                              </p>
+                              <p> 
+                                <input type="checkbox" id="filter-4">
+                                <label for="filter-4">Мука</label>
+                              </p>
+                              <p> 
+                                <input type="checkbox" id="filter-5">
+                                <label for="filter-5">Сливки</label>
+                              </p>
+                              <p> 
+                                <input type="checkbox" id="filter-11">
+                                <label for="filter-11">Сметана</label>
+                              </p>
+                              <p> 
+                                <input type="checkbox" id="filter-12">
+                                <label for="filter-12">Сметанный крем</label>
+                              </p>
+                              <p> 
+                                <input type="checkbox" id="filter-13">
+                                <label for="filter-13">Мак</label>
+                              </p>
+                              <p> 
+                                <input type="checkbox" id="filter-14">
+                                <label for="filter-14">Ингридиент</label>
+                              </p>
+                              <p> 
+                                <input type="checkbox" id="filter-21">
+                                <label for="filter-21">Ингридиент</label>
+                              </p>
+                              <p> 
+                                <input type="checkbox" id="filter-22">
+                                <label for="filter-22">Ингридиент</label>
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="filter-block__button"> <a class="button" href="#">Применить</a></div>
+                      </div>
+                      <div class="filter-block"> 
+                        <div class="filter-block__content">
+                          <p class="name">Спецпредложения</p>
+                          <div class="chekbox">
+                            <p> 
+                              <input type="checkbox" id="filter-41" checked="checked">
+                              <label for="filter-41">Акция</label>
+                            </p>
+                            <p> 
+                              <input type="checkbox" id="filter-42">
+                              <label for="filter-42">Острое</label>
+                            </p>
+                            <p> 
+                              <input type="checkbox" id="filter-43">
+                              <label for="filter-43">Рекомендуем</label>
+                            </p>
+                          </div>
+                        </div>
+                        <div class="filter-block__button"> <a class="button" href="#">Применить</a></div>
+                      </div>
+                      <div class="filter-block__button filter-block__button__all"><a class="button" href="#">Применить</a></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-9 col-12">
+                  <div class="favorites-block">
+                    <div class="slider-categories__slide"><span class="slider-categories__slide_image"><a href="#"><img src="assets/images/category-6.png" alt=""></a></span><span class="slider-categories__slide_text"><span class="text">   <span class="text-value">                                <a class="name" href="#">Хот-дог "Спайси BBQ"</a>
+                            <p class="value">190 гр.</p></span>
+                          <div class="add-to-favorite">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="17" viewBox="0 0 19 17">
+                              <path id="add_to_favorite" data-name="add to favorite" d="M106.117,45.631a4.909,4.909,0,0,0-3.475-3.115c-2.731-.629-4.911,1.194-5.652,1.924-.739-.73-2.917-2.556-5.652-1.924a4.908,4.908,0,0,0-3.475,3.115c-.788,2.2-.712,5.687,4.124,9.758l4.782,3.918a.346.346,0,0,0,.221.079.351.351,0,0,0,.222-.079L102,55.387c4.833-4.068,4.909-7.551,4.121-9.755Z" transform="translate(-87.49 -42.386)" fill="#d5d5d5"></path>
+                            </svg>
+                          </div></span><span class="actions"><span class="price">3 200 руб.   </span>
+                          <div class="actions-to-basket">                           <a class="button in-button" href="#">+</a>
+                            <div class="input-group spinner">
+                              <button class="btn increase" type="button"> 
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="1.999" viewBox="0 0 10 1.999">
+                                  <path id="Path_3925" data-name="Path 3925" d="M6705-1884v-2h10v2Z" transform="translate(-6705 1886)" fill="#25273d"></path>
+                                </svg>
+                              </button>
+                              <input class="spinner-input" type="text" value="1" readonly="readonly">
+                              <button class="btn decrease" type="button">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10">
+                                  <path id="Path_3925" data-name="Path 3925" d="M6709-1880v-4h-4v-2h4v-4h2v4h4v2h-4v4Z" transform="translate(-6705 1890)" fill="#25273d"></path>
+                                </svg>
+                              </button>
+                            </div>
+                          </div></span></span></div>
+                    <div class="slider-categories__slide"><span class="slider-categories__slide_image"><a href="#"><img src="assets/images/category-7.png" alt=""></a></span><span class="slider-categories__slide_text"><span class="text">   <span class="text-value">                                <a class="name" href="#">Хот-дог "Спайси BBQ"</a>
+                            <p class="value">190 гр.</p></span>
+                          <div class="add-to-favorite">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="17" viewBox="0 0 19 17">
+                              <path id="add_to_favorite" data-name="add to favorite" d="M106.117,45.631a4.909,4.909,0,0,0-3.475-3.115c-2.731-.629-4.911,1.194-5.652,1.924-.739-.73-2.917-2.556-5.652-1.924a4.908,4.908,0,0,0-3.475,3.115c-.788,2.2-.712,5.687,4.124,9.758l4.782,3.918a.346.346,0,0,0,.221.079.351.351,0,0,0,.222-.079L102,55.387c4.833-4.068,4.909-7.551,4.121-9.755Z" transform="translate(-87.49 -42.386)" fill="#d5d5d5"></path>
+                            </svg>
+                          </div></span><span class="actions"><span class="price">3 200 руб.   </span>
+                          <div class="actions-to-basket">                           <a class="button in-button" href="#">+</a>
+                            <div class="input-group spinner">
+                              <button class="btn increase" type="button"> 
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="1.999" viewBox="0 0 10 1.999">
+                                  <path id="Path_3925" data-name="Path 3925" d="M6705-1884v-2h10v2Z" transform="translate(-6705 1886)" fill="#25273d"></path>
+                                </svg>
+                              </button>
+                              <input class="spinner-input" type="text" value="1" readonly="readonly">
+                              <button class="btn decrease" type="button">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10">
+                                  <path id="Path_3925" data-name="Path 3925" d="M6709-1880v-4h-4v-2h4v-4h2v4h4v2h-4v4Z" transform="translate(-6705 1890)" fill="#25273d"></path>
+                                </svg>
+                              </button>
+                            </div>
+                          </div></span></span></div>
+                    <div class="slider-categories__slide"><span class="slider-categories__slide_image"><a href="#"><img src="assets/images/category-8.png" alt=""></a></span><span class="slider-categories__slide_text"><span class="text">   <span class="text-value">                                <a class="name" href="#">Хот-дог "Спайси BBQ"</a>
+                            <p class="value">190 гр.</p></span>
+                          <div class="add-to-favorite">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="17" viewBox="0 0 19 17">
+                              <path id="add_to_favorite" data-name="add to favorite" d="M106.117,45.631a4.909,4.909,0,0,0-3.475-3.115c-2.731-.629-4.911,1.194-5.652,1.924-.739-.73-2.917-2.556-5.652-1.924a4.908,4.908,0,0,0-3.475,3.115c-.788,2.2-.712,5.687,4.124,9.758l4.782,3.918a.346.346,0,0,0,.221.079.351.351,0,0,0,.222-.079L102,55.387c4.833-4.068,4.909-7.551,4.121-9.755Z" transform="translate(-87.49 -42.386)" fill="#d5d5d5"></path>
+                            </svg>
+                          </div></span><span class="actions"><span class="price">3 200 руб.   </span>
+                          <div class="actions-to-basket">                        <a class="button in-button" href="#">+</a>
+                            <div class="input-group spinner">
+                              <button class="btn increase" type="button"> 
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="1.999" viewBox="0 0 10 1.999">
+                                  <path id="Path_3925" data-name="Path 3925" d="M6705-1884v-2h10v2Z" transform="translate(-6705 1886)" fill="#25273d"></path>
+                                </svg>
+                              </button>
+                              <input class="spinner-input" type="text" value="1" readonly="readonly">
+                              <button class="btn decrease" type="button">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10">
+                                  <path id="Path_3925" data-name="Path 3925" d="M6709-1880v-4h-4v-2h4v-4h2v4h4v2h-4v4Z" transform="translate(-6705 1890)" fill="#25273d"></path>
+                                </svg>
+                              </button>
+                            </div>
+                          </div></span></span></div>
+                    <div class="slider-categories__slide"><span class="slider-categories__slide_image"><a href="#"><img src="assets/images/category-6.png" alt=""></a></span><span class="slider-categories__slide_text"><span class="text">   <span class="text-value">                                <a class="name" href="#">Хот-дог "Спайси BBQ"</a>
+                            <p class="value">190 гр.</p></span>
+                          <div class="add-to-favorite">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="17" viewBox="0 0 19 17">
+                              <path id="add_to_favorite" data-name="add to favorite" d="M106.117,45.631a4.909,4.909,0,0,0-3.475-3.115c-2.731-.629-4.911,1.194-5.652,1.924-.739-.73-2.917-2.556-5.652-1.924a4.908,4.908,0,0,0-3.475,3.115c-.788,2.2-.712,5.687,4.124,9.758l4.782,3.918a.346.346,0,0,0,.221.079.351.351,0,0,0,.222-.079L102,55.387c4.833-4.068,4.909-7.551,4.121-9.755Z" transform="translate(-87.49 -42.386)" fill="#d5d5d5"></path>
+                            </svg>
+                          </div></span><span class="actions"><span class="price">3 200 руб.   </span>
+                          <div class="actions-to-basket">                           <a class="button in-button" href="#">+</a>
+                            <div class="input-group spinner">
+                              <button class="btn increase" type="button"> 
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="1.999" viewBox="0 0 10 1.999">
+                                  <path id="Path_3925" data-name="Path 3925" d="M6705-1884v-2h10v2Z" transform="translate(-6705 1886)" fill="#25273d"></path>
+                                </svg>
+                              </button>
+                              <input class="spinner-input" type="text" value="1" readonly="readonly">
+                              <button class="btn decrease" type="button">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10">
+                                  <path id="Path_3925" data-name="Path 3925" d="M6709-1880v-4h-4v-2h4v-4h2v4h4v2h-4v4Z" transform="translate(-6705 1890)" fill="#25273d"></path>
+                                </svg>
+                              </button>
+                            </div>
+                          </div></span></span></div>
+                    <div class="slider-categories__slide"><span class="slider-categories__slide_image"><a href="#"><img src="assets/images/category-7.png" alt=""></a></span><span class="slider-categories__slide_text"><span class="text">   <span class="text-value">                                <a class="name" href="#">Хот-дог "Спайси BBQ"</a>
+                            <p class="value">190 гр.</p></span>
+                          <div class="add-to-favorite">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="17" viewBox="0 0 19 17">
+                              <path id="add_to_favorite" data-name="add to favorite" d="M106.117,45.631a4.909,4.909,0,0,0-3.475-3.115c-2.731-.629-4.911,1.194-5.652,1.924-.739-.73-2.917-2.556-5.652-1.924a4.908,4.908,0,0,0-3.475,3.115c-.788,2.2-.712,5.687,4.124,9.758l4.782,3.918a.346.346,0,0,0,.221.079.351.351,0,0,0,.222-.079L102,55.387c4.833-4.068,4.909-7.551,4.121-9.755Z" transform="translate(-87.49 -42.386)" fill="#d5d5d5"></path>
+                            </svg>
+                          </div></span><span class="actions"><span class="price">3 200 руб.   </span>
+                          <div class="actions-to-basket">                           <a class="button in-button" href="#">+</a>
+                            <div class="input-group spinner">
+                              <button class="btn increase" type="button"> 
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="1.999" viewBox="0 0 10 1.999">
+                                  <path id="Path_3925" data-name="Path 3925" d="M6705-1884v-2h10v2Z" transform="translate(-6705 1886)" fill="#25273d"></path>
+                                </svg>
+                              </button>
+                              <input class="spinner-input" type="text" value="1" readonly="readonly">
+                              <button class="btn decrease" type="button">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10">
+                                  <path id="Path_3925" data-name="Path 3925" d="M6709-1880v-4h-4v-2h4v-4h2v4h4v2h-4v4Z" transform="translate(-6705 1890)" fill="#25273d"></path>
+                                </svg>
+                              </button>
+                            </div>
+                          </div></span></span></div>
+                    <div class="slider-categories__slide"><span class="slider-categories__slide_image"><a href="#"><img src="assets/images/category-8.png" alt=""></a></span><span class="slider-categories__slide_text"><span class="text">   <span class="text-value">                                <a class="name" href="#">Хот-дог "Спайси BBQ"</a>
+                            <p class="value">190 гр.</p></span>
+                          <div class="add-to-favorite">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="17" viewBox="0 0 19 17">
+                              <path id="add_to_favorite" data-name="add to favorite" d="M106.117,45.631a4.909,4.909,0,0,0-3.475-3.115c-2.731-.629-4.911,1.194-5.652,1.924-.739-.73-2.917-2.556-5.652-1.924a4.908,4.908,0,0,0-3.475,3.115c-.788,2.2-.712,5.687,4.124,9.758l4.782,3.918a.346.346,0,0,0,.221.079.351.351,0,0,0,.222-.079L102,55.387c4.833-4.068,4.909-7.551,4.121-9.755Z" transform="translate(-87.49 -42.386)" fill="#d5d5d5"></path>
+                            </svg>
+                          </div></span><span class="actions"><span class="price">3 200 руб.   </span>
+                          <div class="actions-to-basket">                        <a class="button in-button" href="#">+</a>
+                            <div class="input-group spinner">
+                              <button class="btn increase" type="button"> 
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="1.999" viewBox="0 0 10 1.999">
+                                  <path id="Path_3925" data-name="Path 3925" d="M6705-1884v-2h10v2Z" transform="translate(-6705 1886)" fill="#25273d"></path>
+                                </svg>
+                              </button>
+                              <input class="spinner-input" type="text" value="1" readonly="readonly">
+                              <button class="btn decrease" type="button">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10">
+                                  <path id="Path_3925" data-name="Path 3925" d="M6709-1880v-4h-4v-2h4v-4h2v4h4v2h-4v4Z" transform="translate(-6705 1890)" fill="#25273d"></path>
+                                </svg>
+                              </button>
+                            </div>
+                          </div></span></span></div>
+                    <div class="slider-categories__slide"><span class="slider-categories__slide_image"><a href="#"><img src="assets/images/category-6.png" alt=""></a></span><span class="slider-categories__slide_text"><span class="text">   <span class="text-value">                                <a class="name" href="#">Хот-дог "Спайси BBQ"</a>
+                            <p class="value">190 гр.</p></span>
+                          <div class="add-to-favorite">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="17" viewBox="0 0 19 17">
+                              <path id="add_to_favorite" data-name="add to favorite" d="M106.117,45.631a4.909,4.909,0,0,0-3.475-3.115c-2.731-.629-4.911,1.194-5.652,1.924-.739-.73-2.917-2.556-5.652-1.924a4.908,4.908,0,0,0-3.475,3.115c-.788,2.2-.712,5.687,4.124,9.758l4.782,3.918a.346.346,0,0,0,.221.079.351.351,0,0,0,.222-.079L102,55.387c4.833-4.068,4.909-7.551,4.121-9.755Z" transform="translate(-87.49 -42.386)" fill="#d5d5d5"></path>
+                            </svg>
+                          </div></span><span class="actions"><span class="price">3 200 руб.   </span>
+                          <div class="actions-to-basket">                           <a class="button in-button" href="#">+</a>
+                            <div class="input-group spinner">
+                              <button class="btn increase" type="button"> 
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="1.999" viewBox="0 0 10 1.999">
+                                  <path id="Path_3925" data-name="Path 3925" d="M6705-1884v-2h10v2Z" transform="translate(-6705 1886)" fill="#25273d"></path>
+                                </svg>
+                              </button>
+                              <input class="spinner-input" type="text" value="1" readonly="readonly">
+                              <button class="btn decrease" type="button">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10">
+                                  <path id="Path_3925" data-name="Path 3925" d="M6709-1880v-4h-4v-2h4v-4h2v4h4v2h-4v4Z" transform="translate(-6705 1890)" fill="#25273d"></path>
+                                </svg>
+                              </button>
+                            </div>
+                          </div></span></span></div>
+                    <div class="slider-categories__slide"><span class="slider-categories__slide_image"><a href="#"><img src="assets/images/category-7.png" alt=""></a></span><span class="slider-categories__slide_text"><span class="text">   <span class="text-value">                                <a class="name" href="#">Хот-дог "Спайси BBQ"</a>
+                            <p class="value">190 гр.</p></span>
+                          <div class="add-to-favorite">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="17" viewBox="0 0 19 17">
+                              <path id="add_to_favorite" data-name="add to favorite" d="M106.117,45.631a4.909,4.909,0,0,0-3.475-3.115c-2.731-.629-4.911,1.194-5.652,1.924-.739-.73-2.917-2.556-5.652-1.924a4.908,4.908,0,0,0-3.475,3.115c-.788,2.2-.712,5.687,4.124,9.758l4.782,3.918a.346.346,0,0,0,.221.079.351.351,0,0,0,.222-.079L102,55.387c4.833-4.068,4.909-7.551,4.121-9.755Z" transform="translate(-87.49 -42.386)" fill="#d5d5d5"></path>
+                            </svg>
+                          </div></span><span class="actions"><span class="price">3 200 руб.   </span>
+                          <div class="actions-to-basket">                           <a class="button in-button" href="#">+</a>
+                            <div class="input-group spinner">
+                              <button class="btn increase" type="button"> 
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="1.999" viewBox="0 0 10 1.999">
+                                  <path id="Path_3925" data-name="Path 3925" d="M6705-1884v-2h10v2Z" transform="translate(-6705 1886)" fill="#25273d"></path>
+                                </svg>
+                              </button>
+                              <input class="spinner-input" type="text" value="1" readonly="readonly">
+                              <button class="btn decrease" type="button">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10">
+                                  <path id="Path_3925" data-name="Path 3925" d="M6709-1880v-4h-4v-2h4v-4h2v4h4v2h-4v4Z" transform="translate(-6705 1890)" fill="#25273d"></path>
+                                </svg>
+                              </button>
+                            </div>
+                          </div></span></span></div>
+                    <div class="slider-categories__slide"><span class="slider-categories__slide_image"><a href="#"><img src="assets/images/category-8.png" alt=""></a></span><span class="slider-categories__slide_text"><span class="text">   <span class="text-value">                                <a class="name" href="#">Хот-дог "Спайси BBQ"</a>
+                            <p class="value">190 гр.</p></span>
+                          <div class="add-to-favorite">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="17" viewBox="0 0 19 17">
+                              <path id="add_to_favorite" data-name="add to favorite" d="M106.117,45.631a4.909,4.909,0,0,0-3.475-3.115c-2.731-.629-4.911,1.194-5.652,1.924-.739-.73-2.917-2.556-5.652-1.924a4.908,4.908,0,0,0-3.475,3.115c-.788,2.2-.712,5.687,4.124,9.758l4.782,3.918a.346.346,0,0,0,.221.079.351.351,0,0,0,.222-.079L102,55.387c4.833-4.068,4.909-7.551,4.121-9.755Z" transform="translate(-87.49 -42.386)" fill="#d5d5d5"></path>
+                            </svg>
+                          </div></span><span class="actions"><span class="price">3 200 руб.   </span>
+                          <div class="actions-to-basket">                        <a class="button in-button" href="#">+</a>
+                            <div class="input-group spinner">
+                              <button class="btn increase" type="button"> 
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="1.999" viewBox="0 0 10 1.999">
+                                  <path id="Path_3925" data-name="Path 3925" d="M6705-1884v-2h10v2Z" transform="translate(-6705 1886)" fill="#25273d"></path>
+                                </svg>
+                              </button>
+                              <input class="spinner-input" type="text" value="1" readonly="readonly">
+                              <button class="btn decrease" type="button">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10">
+                                  <path id="Path_3925" data-name="Path 3925" d="M6709-1880v-4h-4v-2h4v-4h2v4h4v2h-4v4Z" transform="translate(-6705 1890)" fill="#25273d"></path>
+                                </svg>
+                              </button>
+                            </div>
+                          </div></span></span></div>
+                    <div class="slider-categories__slide"><span class="slider-categories__slide_image"><a href="#"><img src="assets/images/category-6.png" alt=""></a></span><span class="slider-categories__slide_text"><span class="text">   <span class="text-value">                                <a class="name" href="#">Хот-дог "Спайси BBQ"</a>
+                            <p class="value">190 гр.</p></span>
+                          <div class="add-to-favorite">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="17" viewBox="0 0 19 17">
+                              <path id="add_to_favorite" data-name="add to favorite" d="M106.117,45.631a4.909,4.909,0,0,0-3.475-3.115c-2.731-.629-4.911,1.194-5.652,1.924-.739-.73-2.917-2.556-5.652-1.924a4.908,4.908,0,0,0-3.475,3.115c-.788,2.2-.712,5.687,4.124,9.758l4.782,3.918a.346.346,0,0,0,.221.079.351.351,0,0,0,.222-.079L102,55.387c4.833-4.068,4.909-7.551,4.121-9.755Z" transform="translate(-87.49 -42.386)" fill="#d5d5d5"></path>
+                            </svg>
+                          </div></span><span class="actions"><span class="price">3 200 руб.   </span>
+                          <div class="actions-to-basket">                           <a class="button in-button" href="#">+</a>
+                            <div class="input-group spinner">
+                              <button class="btn increase" type="button"> 
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="1.999" viewBox="0 0 10 1.999">
+                                  <path id="Path_3925" data-name="Path 3925" d="M6705-1884v-2h10v2Z" transform="translate(-6705 1886)" fill="#25273d"></path>
+                                </svg>
+                              </button>
+                              <input class="spinner-input" type="text" value="1" readonly="readonly">
+                              <button class="btn decrease" type="button">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10">
+                                  <path id="Path_3925" data-name="Path 3925" d="M6709-1880v-4h-4v-2h4v-4h2v4h4v2h-4v4Z" transform="translate(-6705 1890)" fill="#25273d"></path>
+                                </svg>
+                              </button>
+                            </div>
+                          </div></span></span></div>
+                    <div class="slider-categories__slide"><span class="slider-categories__slide_image"><a href="#"><img src="assets/images/category-7.png" alt=""></a></span><span class="slider-categories__slide_text"><span class="text">   <span class="text-value">                                <a class="name" href="#">Хот-дог "Спайси BBQ"</a>
+                            <p class="value">190 гр.</p></span>
+                          <div class="add-to-favorite">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="17" viewBox="0 0 19 17">
+                              <path id="add_to_favorite" data-name="add to favorite" d="M106.117,45.631a4.909,4.909,0,0,0-3.475-3.115c-2.731-.629-4.911,1.194-5.652,1.924-.739-.73-2.917-2.556-5.652-1.924a4.908,4.908,0,0,0-3.475,3.115c-.788,2.2-.712,5.687,4.124,9.758l4.782,3.918a.346.346,0,0,0,.221.079.351.351,0,0,0,.222-.079L102,55.387c4.833-4.068,4.909-7.551,4.121-9.755Z" transform="translate(-87.49 -42.386)" fill="#d5d5d5"></path>
+                            </svg>
+                          </div></span><span class="actions"><span class="price">3 200 руб.   </span>
+                          <div class="actions-to-basket">                           <a class="button in-button" href="#">+</a>
+                            <div class="input-group spinner">
+                              <button class="btn increase" type="button"> 
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="1.999" viewBox="0 0 10 1.999">
+                                  <path id="Path_3925" data-name="Path 3925" d="M6705-1884v-2h10v2Z" transform="translate(-6705 1886)" fill="#25273d"></path>
+                                </svg>
+                              </button>
+                              <input class="spinner-input" type="text" value="1" readonly="readonly">
+                              <button class="btn decrease" type="button">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10">
+                                  <path id="Path_3925" data-name="Path 3925" d="M6709-1880v-4h-4v-2h4v-4h2v4h4v2h-4v4Z" transform="translate(-6705 1890)" fill="#25273d"></path>
+                                </svg>
+                              </button>
+                            </div>
+                          </div></span></span></div>
+                    <div class="slider-categories__slide"><span class="slider-categories__slide_image"><a href="#"><img src="assets/images/category-8.png" alt=""></a></span><span class="slider-categories__slide_text"><span class="text">   <span class="text-value">                                <a class="name" href="#">Хот-дог "Спайси BBQ"</a>
+                            <p class="value">190 гр.</p></span>
+                          <div class="add-to-favorite">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="17" viewBox="0 0 19 17">
+                              <path id="add_to_favorite" data-name="add to favorite" d="M106.117,45.631a4.909,4.909,0,0,0-3.475-3.115c-2.731-.629-4.911,1.194-5.652,1.924-.739-.73-2.917-2.556-5.652-1.924a4.908,4.908,0,0,0-3.475,3.115c-.788,2.2-.712,5.687,4.124,9.758l4.782,3.918a.346.346,0,0,0,.221.079.351.351,0,0,0,.222-.079L102,55.387c4.833-4.068,4.909-7.551,4.121-9.755Z" transform="translate(-87.49 -42.386)" fill="#d5d5d5"></path>
+                            </svg>
+                          </div></span><span class="actions"><span class="price">3 200 руб.   </span>
+                          <div class="actions-to-basket">                        <a class="button in-button" href="#">+</a>
+                            <div class="input-group spinner">
+                              <button class="btn increase" type="button"> 
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="1.999" viewBox="0 0 10 1.999">
+                                  <path id="Path_3925" data-name="Path 3925" d="M6705-1884v-2h10v2Z" transform="translate(-6705 1886)" fill="#25273d"></path>
+                                </svg>
+                              </button>
+                              <input class="spinner-input" type="text" value="1" readonly="readonly">
+                              <button class="btn decrease" type="button">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10">
+                                  <path id="Path_3925" data-name="Path 3925" d="M6709-1880v-4h-4v-2h4v-4h2v4h4v2h-4v4Z" transform="translate(-6705 1890)" fill="#25273d"></path>
+                                </svg>
+                              </button>
+                            </div>
+                          </div></span></span></div>
+                  </div>
+                  <div class="pagination-block"> 
+                    <ul class="pagination">
+                      <li class="page-item"><a class="page-link active" href="#">1</a></li>
+                      <li class="page-item"><a class="page-link" href="#">2</a></li>
+                      <li class="page-item"><a class="page-link" href="#">3</a></li>
+                      <li class="page-item"><a class="page-link" href="#">4</a></li>
+                      <li class="page-item">...</li>
+                      <li class="page-item"><a class="page-link" href="#">15</a></li>
+                    </ul><a class="next" href="#">Следующая <span>страница </span></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="catalog-text"> 
+            <div class="container">
+              <div class="main-text">
+                <div class="main-text__block"> <strong>Подпишитесь на рассылку </strong>
+                  <p>Информация о скидках, актуальные новости и анонсы мероприятий</p><a class="button" href="#"> <img src="assets/images/arrow.svg" alt=""></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer class="footer">
+        <div class="container"> 
+          <div class="row"> 
+            <div class="col-lg-5 col-md-6 col-12"> 
+              <div class="footer-logo"> <img src="assets/images/logo.svg" alt=""></div>
+              <div class="footer-contacts"> 
+                <p class="caption">Контакты</p>
+                <p> <a href="tel:89008007060">8 (900) 800 70 60 </a></p>
+                <p> <a href="mailto:hello@sitename.ru">hello@sitename.ru</a></p>
+                <p>Ежедневно с 1000 - 1800 </p>
+              </div>
+              <div class="footer-social">
+                <p class="caption">Мы в социальных сетях</p>
+                <ul class="social"> 
+                  <li> <a href="#">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="21" height="13" viewBox="0 0 21 13">
+                        <path id="vk_logo" data-name="vk logo" d="M19.538,27.6c-7.175,0-11.267-4.88-11.438-13h3.594c.118,5.96,2.768,8.484,4.866,9.005V14.6h3.384v5.14c2.072-.221,4.25-2.564,4.984-5.14h3.384a9.923,9.923,0,0,1-4.6,6.48A10.3,10.3,0,0,1,29.1,27.6H25.375a6.46,6.46,0,0,0-5.43-4.646V27.6Z" transform="translate(-8.1 -14.6)" fill="#bcdbd9"></path>
+                      </svg></a></li>
+                  <li> <a href="#">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="10" height="17" viewBox="0 0 10 17">
+                        <path id="odnoklassniki" d="M14.792,11.086a7.041,7.041,0,0,1-2.922.893l.679.684L15.026,15.2c.906.949-.568,2.433-1.484,1.517-.62-.644-1.529-1.573-2.477-2.543L8.587,16.709c-.916.913-2.39-.584-1.474-1.517.63-.644,1.529-1.573,2.477-2.533l.669-.684a7.008,7.008,0,0,1-2.942-.893c-1.059-.7-1.523-1.105-1.114-1.958.24-.485.9-.893,1.773-.189a5.2,5.2,0,0,0,3.081.959,5.2,5.2,0,0,0,3.081-.959c.873-.7,1.529-.3,1.773.189.4.853-.062,1.261-1.12,1.962ZM6.844,4.305a4.212,4.212,0,1,1,8.423,0,4.212,4.212,0,1,1-8.423,0Zm2.143,0a2.069,2.069,0,1,0,4.137,0,2.069,2.069,0,1,0-4.137,0Z" transform="translate(-6.056)" fill="#bcdbd9"></path>
+                      </svg></a></li>
+                  <li> <a href="#">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17">
+                        <path id="pinterest" d="M17,16.5A8.5,8.5,0,0,1,5.984,24.62,9.555,9.555,0,0,0,7.04,22.392c.1-.4.528-2.022.528-2.022a2.276,2.276,0,0,0,1.947.977c2.564,0,4.411-2.358,4.411-5.289A4.989,4.989,0,0,0,8.685,11.15c-3.667,0-5.618,2.461-5.618,5.145a3.814,3.814,0,0,0,1.724,3.294c.161.075.247.041.284-.113.027-.117.171-.7.236-.963a.254.254,0,0,0-.058-.243,3.347,3.347,0,0,1-.627-1.94,3.678,3.678,0,0,1,3.839-3.688A3.356,3.356,0,0,1,12.017,16.1c0,2.3-1.162,3.894-2.673,3.894a1.233,1.233,0,0,1-1.258-1.535,17.08,17.08,0,0,0,.7-2.831,1.067,1.067,0,0,0-1.076-1.2c-.853,0-1.539.881-1.539,2.063a3.063,3.063,0,0,0,.254,1.261s-.84,3.558-.994,4.223a8.228,8.228,0,0,0-.031,2.44A8.5,8.5,0,1,1,17,16.5Z" transform="translate(0 -8)" fill="#bcdbd9"></path>
+                      </svg></a></li>
+                  <li> <a href="#">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17">
+                        <path id="whatsapp" d="M14.454,34.47A8.427,8.427,0,0,0,1.2,44.636L0,49l4.466-1.173a8.4,8.4,0,0,0,4.026,1.025h0A8.371,8.371,0,0,0,14.454,34.47ZM8.5,47.433a6.989,6.989,0,0,1-3.567-.975l-.254-.152L2.026,47l.706-2.584-.167-.266a7.015,7.015,0,1,1,13.012-3.723A7.08,7.08,0,0,1,8.5,47.433Zm3.84-5.244c-.209-.106-1.245-.615-1.438-.683s-.334-.106-.474.106-.543.683-.668.827-.247.159-.455.053a5.73,5.73,0,0,1-2.865-2.5c-.216-.372.216-.345.619-1.15a.39.39,0,0,0-.019-.368c-.053-.106-.474-1.142-.649-1.563s-.345-.353-.474-.36-.262-.008-.4-.008a.78.78,0,0,0-.562.262,2.365,2.365,0,0,0-.736,1.757,4.124,4.124,0,0,0,.858,2.178,9.406,9.406,0,0,0,3.6,3.18,4.119,4.119,0,0,0,2.527.527,2.156,2.156,0,0,0,1.419-1,1.76,1.76,0,0,0,.121-1C12.685,42.344,12.545,42.291,12.336,42.189Z" transform="translate(0 -32)" fill="#bcdbd9"></path>
+                      </svg></a></li>
+                  <li> <a href="#">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17">
+                        <path id="telegram" d="M8.5,8A8.5,8.5,0,1,0,17,16.5,8.5,8.5,0,0,0,8.5,8Zm3.94,5.781c-.128,1.344-.681,4.606-.963,6.111-.119.637-.354.851-.581.871-.494.045-.868-.326-1.347-.64-.748-.49-1.171-.8-1.9-1.274-.839-.553-.3-.857.183-1.354.125-.13,2.3-2.108,2.342-2.288a.173.173,0,0,0-.04-.15.2.2,0,0,0-.176-.017q-.113.026-3.585,2.37a1.614,1.614,0,0,1-.922.34,6.064,6.064,0,0,1-1.321-.313c-.532-.173-.955-.264-.919-.558q.029-.23.632-.47Q7.564,14.791,8.8,14.275a13.2,13.2,0,0,1,3.171-1.158.56.56,0,0,1,.329.1.358.358,0,0,1,.121.23A1.5,1.5,0,0,1,12.44,13.781Z" transform="translate(0 -8)" fill="#bcdbd9"></path>
+                      </svg></a></li>
+                  <li> <a href="#">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17">
+                        <path id="vimeo-v" d="M19.991,68.046q-.134,2.87-4.08,7.86-4.078,5.213-6.9,5.213-1.748,0-2.96-3.173c-1.571-5.67-2.241-8.992-3.54-8.992a6.258,6.258,0,0,0-1.571.926L0,68.686c2.3-1.988,4.5-4.2,5.884-4.323Q8.221,64.14,8.759,67.5c1.281,7.965,1.848,9.167,4.178,5.56A7.681,7.681,0,0,0,14.285,70.1c.214-2.014-1.6-1.878-2.826-1.36q1.473-4.746,5.634-4.612C19.138,64.175,20.107,65.487,19.991,68.046Z" transform="translate(0 -64.119)" fill="#bcdbd9"></path>
+                      </svg></a></li>
+                  <li> <a href="#">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="13" viewBox="0 0 18 13">
+                        <path id="youtube" d="M32.557,66.034a2.294,2.294,0,0,0-1.591-1.645A52.05,52.05,0,0,0,23.933,64a52.05,52.05,0,0,0-7.032.389,2.294,2.294,0,0,0-1.591,1.645,26.857,26.857,0,0,0,0,8.958A2.258,2.258,0,0,0,16.9,76.611,52.05,52.05,0,0,0,23.933,77a52.05,52.05,0,0,0,7.032-.389,2.258,2.258,0,0,0,1.591-1.619,26.858,26.858,0,0,0,0-8.958ZM22.092,73.262v-5.5l4.7,2.749Z" transform="translate(-14.933 -64)" fill="#bcdbd9"></path>
+                      </svg></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-7 col-md-6 col-12"> 
+              <div class="footer-form">
+                <p class="caption">Подписаться на рассылку</p>
+                <form> 
+                  <input type="text" placeholder="Укажите свой email...">
+                  <button class="button" type="submit"><img src="assets/images/arrow.svg" alt=""></button>
+                </form>
+              </div>
+              <div class="row">
+                <div class="col-xl-8 col-md-6 col-6">
+                  <p class="caption">Меню</p>
+                  <ul class="footer-menu two-column"> 
+                    <li class="footer-menu__item"> <a class="footer-menu__link" href="#">Порционные блюда</a></li>
+                    <li class="footer-menu__item"> <a class="footer-menu__link" href="#">Сэндвичи</a></li>
+                    <li class="footer-menu__item"> <a class="footer-menu__link" href="#">Блюда в лаваше</a></li>
+                    <li class="footer-menu__item"> <a class="footer-menu__link" href="#">Картофель</a></li>
+                    <li class="footer-menu__item"> <a class="footer-menu__link" href="#">Аппетайзеры</a></li>
+                    <li class="footer-menu__item"> <a class="footer-menu__link" href="#">Салаты</a></li>
+                    <li class="footer-menu__item"> <a class="footer-menu__link" href="#">Напитки</a></li>
+                    <li class="footer-menu__item"> <a class="footer-menu__link" href="#">Десерты</a></li>
+                    <li class="footer-menu__item"> <a class="footer-menu__link" href="#">Пицца</a></li>
+                  </ul>
+                </div>
+                <div class="col-xl-4 col-md-6 col-6">
+                  <p class="caption">Информация</p>
+                  <ul class="footer-menu"> 
+                    <li class="footer-menu__item"> <a class="footer-menu__link" href="#">О магазине</a></li>
+                    <li class="footer-menu__item"> <a class="footer-menu__link" href="#">Доставка и оплата</a></li>
+                    <li class="footer-menu__item"> <a class="footer-menu__link" href="#">Отзывы</a></li>
+                    <li class="footer-menu__item"> <a class="footer-menu__link" href="#">Контакты</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <div class="modal fade" id="cityModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Ваш город</h5>
+              <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+            </div>
+            <div class="modal-body">
+              <ul class="city-list"> 
+                <li> <a href="#">Астрахань</a></li>
+                <li> <a href="#">Барнаул</a></li>
+                <li> <a href="#">Белгород</a></li>
+                <li> <a href="#">Великий Новгород</a></li>
+                <li> <a href="#">Владивосток</a></li>
+                <li> <a href="#">Владимир</a></li>
+                <li> <a href="#">Волгоград</a></li>
+                <li> <a href="#">Воронеж</a></li>
+                <li> <a href="#">Екатеринбург</a></li>
+                <li> <a href="#">Иваново</a></li>
+                <li> <a href="#">Иркутск</a></li>
+                <li> <a href="#">Казань</a></li>
+                <li> <a href="#">Калининград</a></li>
+                <li> <a href="#">Калуга</a></li>
+                <li> <a href="#">Киров</a></li>
+                <li> <a href="#">Краснодар</a></li>
+                <li> <a href="#">Красноярск</a></li>
+                <li> <a href="#">Курск</a></li>
+                <li> <a href="#">Липецк</a></li>
+                <li> <a href="#">Москва</a></li>
+                <li> <a href="#">Нижний Новгород</a></li>
+                <li> <a href="#">Новосибирск</a></li>
+                <li> <a href="#">Омск</a></li>
+                <li> <a href="#">Оренбург</a></li>
+                <li> <a href="#">Пенза</a></li>
+                <li> <a href="#">Пермь</a></li>
+                <li> <a href="#">Петропавловск-Камчатский</a></li>
+                <li> <a href="#">Ростов-на-Дону</a></li>
+                <li> <a href="#">Рязань</a></li>
+                <li> <a href="#">Самара</a></li>
+                <li> <a href="#">Санкт-Петербург</a></li>
+                <li> <a href="#">Саратов</a></li>
+                <li> <a href="#">Сочи</a></li>
+                <li> <a href="#">Ставрополь</a></li>
+                <li> <a href="#">Тверь</a></li>
+                <li> <a href="#">Тольятти</a></li>
+                <li> <a href="#">Томск</a></li>
+                <li> <a href="#">Тула</a></li>
+                <li> <a href="#">Тюмень</a></li>
+                <li> <a href="#">Улан-Удэ</a></li>
+                <li> <a href="#">Ульяновск</a></li>
+                <li> <a href="#">Хабаровск</a></li>
+                <li> <a href="#">Челябинск</a></li>
+                <li> <a href="#">Якутск</a></li>
+                <li> <a href="#">Ярославль</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Записаться на прием</h5>
+              <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+            </div>
+            <div class="modal-body">
+              <p class="note">Оставьте свои контактные данные, и наш специалист свяжется с вами.</p>
+              <div class="form-group"> 
+                <label>Имя</label>
+                <input class="form-control" placeholder="Укажите свое имя">
+              </div>
+              <div class="form-group"> 
+                <label>Телефон</label>
+                <input class="form-control" id="phone" placeholder="+7 (___) ___ - __ - __">
+              </div>
+              <div class="form-group"> 
+                <label>Комментарий</label>
+                <textarea class="form-control" placeholder="Напишите нам что-нибудь"></textarea>
+              </div>
+              <div class="chekbox">
+                <p>
+                  <input type="checkbox" id="idform-1" checked="checked">
+                  <label for="idform-1">Я даю свое согласие на обработку <a href="#">персональных данных.</a></label>
+                </p>
+              </div><a class="btn button button-big button-dark-blue" href="#">Отправить</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+      <script src="assets/js/swiper-bundle.min.js"> </script>
+      <script src="assets/js/jquery.maskedinput.js"></script>
+      <script src="assets/js/jquery.fancybox.min.js"></script>
+      <script src="assets/js/jquery.formstyler.js"></script>
+      <script src="assets/js/nouislider.js"></script>
+      <script src="assets/js/wNumb.js"></script>
+      <script src="assets/js/perfect-scrollbar.js"></script>
+      <script src="assets/js/script.js"></script>
+    </div>
+  </body>
+</html>
