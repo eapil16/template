@@ -4586,6 +4586,11 @@ width: 11px;
   .favorites-page {
     .inside-block__caption .jq-selectbox__select {
       background: transparent;
+      padding: 10px 40px 10px 0;
+      box-shadow: none !important;
+    }
+    .jq-selectbox__trigger {
+      top: 10px;
     }
   }
   .orders {

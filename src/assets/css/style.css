@@ -5333,6 +5333,12 @@ li.page-item {
   }
   .favorites-page .inside-block__caption .jq-selectbox__select {
     background: transparent;
+    padding: 10px 40px 10px 0;
+    -webkit-box-shadow: none !important;
+            box-shadow: none !important;
+  }
+  .favorites-page .jq-selectbox__trigger {
+    top: 10px;
   }
   .orders {
     -webkit-transform: rotate(180deg);
