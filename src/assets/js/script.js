@@ -276,4 +276,53 @@ document.addEventListener('DOMContentLoaded', () => {
         },
     });
 
+    //14 07
+
+    $( function() {
+        $( "#datepicker" ).datepicker({
+            altFormat: "yy-mm-dd",
+        });
+    } );
+
+    $(function(){
+        let inputFile = $('#myInput');
+        let button = $('#myButton');
+        let filesContainer = $('#myFiles');
+        let files = [];
+        
+        inputFile.change(function() {
+          let newFiles = []; 
+          for(let index = 0; index < inputFile[0].files.length; index++) {
+            let file = inputFile[0].files[index];
+            newFiles.push(file);
+            files.push(file);
+          }
+          
+          newFiles.forEach(file => {
+            let fileElement = $(`<p>${file.name}</p>`);
+            fileElement.data('fileData', file);
+            filesContainer.append(fileElement);
+            
+
+            fileElement.click(function(event) {
+              let fileElement = $(event.target);
+              let indexToRemove = files.indexOf(fileElement.data('fileData'));
+              fileElement.remove();
+              files.splice(indexToRemove, 1);
+
+              const blocks = document.querySelectorAll('#myFiles p')
+              console.log('blocks', blocks)
+              if (blocks.length === 0) {
+                document.querySelector('#myFiles').classList.remove('show');
+              }
+            });
+          });
+          document.querySelector('#myFiles').classList.add('show');
+        });
+        
+        button.click(function() {
+          inputFile.click();
+        });
+      });
+
 });
