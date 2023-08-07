@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="assets/css/jquery.formstyler.theme.css">
     <link rel="stylesheet" href="assets/css/nouislider.css"><link rel="stylesheet" href="assets/css/jquery-ui.css">
     <link rel="stylesheet" href="assets/css/ui.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>food</title>
   </head>
   <body>
@@ -553,6 +554,97 @@
                   <label for="idform-1">Я даю свое согласие на обработку <a href="#">персональных данных.</a></label>
                 </p>
               </div><a class="btn button button-big button-dark-blue" href="#">Отправить</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+            </div>
+            <div class="modal-body">
+              <div class="row"> 
+                <div class="col-lg-4 col-md-4 col-12">
+                  <div class="product-image"> <img class="product-image-2" src="assets/images/product11.png" alt=""></div>
+                </div>
+                <div class="col-lg-8 col-md-8 col-12">
+                  <div class="product-content"> 
+                    <div class="product-content__caption"> 
+                      <h1>Хот-дог "Спайси BBQ"</h1>
+                      <div class="add-to-favorite">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="17" viewBox="0 0 19 17">
+                          <path id="add_to_favorite" data-name="add to favorite" d="M106.117,45.631a4.909,4.909,0,0,0-3.475-3.115c-2.731-.629-4.911,1.194-5.652,1.924-.739-.73-2.917-2.556-5.652-1.924a4.908,4.908,0,0,0-3.475,3.115c-.788,2.2-.712,5.687,4.124,9.758l4.782,3.918a.346.346,0,0,0,.221.079.351.351,0,0,0,.222-.079L102,55.387c4.833-4.068,4.909-7.551,4.121-9.755Z" transform="translate(-87.49 -42.386)" fill="#d5d5d5"></path>
+                        </svg>
+                      </div>
+                    </div>
+                    <p>190 гр.</p>
+                    <p>Курочка, сыр и бекон — вместе и навсегда! Внутри бургера — сочные куриные стрипсы в соусе барбекю, ароматный бекон, салат, маринованные огурчики и много расплавленного сыра Чеддер. И всё это — на сырной булочке с сырной кляксой.</p>
+                    <div class="product-content__details"> 
+                      <p>Пожелания</p>
+                      <div class="chekbox-text">
+                        <p> 
+                          <input type="checkbox" id="detail-1" checked>
+                          <label for="detail-1">Без огурцов</label>
+                        </p>
+                        <p> 
+                          <input type="checkbox" id="detail-2">
+                          <label for="detail-2">Без салата</label>
+                        </p>
+                        <p> 
+                          <input type="checkbox" id="detail-3">
+                          <label for="detail-3">Без соуса</label>
+                        </p>
+                        <p> 
+                          <input type="checkbox" id="detail-4">
+                          <label for="detail-4">Без лука</label>
+                        </p>
+                        <p> 
+                          <input type="checkbox" id="detail-5">
+                          <label for="detail-5"> Без сыра Чеддер</label>
+                        </p>
+                      </div>
+                    </div>
+                    <div class="product-content__details"> 
+                      <p>Добавить ингредиенты</p>
+                      <div class="chekbox-text">
+                        <p> 
+                          <input type="checkbox" id="detail-6">
+                          <label for="detail-6">Твердый сыр (+34. 99 р.)</label>
+                        </p>
+                        <p> 
+                          <input type="checkbox" id="detail-7">
+                          <label for="detail-7">Халапеньо (+34. 99 р.)</label>
+                        </p>
+                        <p> 
+                          <input type="checkbox" id="detail-8">
+                          <label for="detail-8">Бекон (+34. 99 р.) </label>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="product-content__act">
+                <div class="col-lg-8 offset-lg-4 col-md-8 offset-md-4 col-12">
+                  <div class="product-content__act_flex"> 
+                    <div class="input-group spinner">
+                      <button class="btn increase" type="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="1.999" viewBox="0 0 10 1.999">
+                          <path id="Path_3925" data-name="Path 3925" d="M6705-1884v-2h10v2Z" transform="translate(-6705 1886)" fill="#25273d"></path>
+                        </svg>
+                      </button>
+                      <input class="spinner-input" type="text" value="1" readonly="readonly">
+                      <button class="btn decrease" type="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10">
+                          <path id="Path_3925" data-name="Path 3925" d="M6709-1880v-4h-4v-2h4v-4h2v4h4v2h-4v4Z" transform="translate(-6705 1890)" fill="#25273d"></path>
+                        </svg>
+                      </button>
+                    </div><a class="button" href="#">В корзину <span>689 р.</span></a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
